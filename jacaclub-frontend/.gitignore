@@ -1,0 +1,62 @@
+# Node.js / Next.js (jacaclub-frontend)
+node_modules/
+.next/
+out/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+package-lock.json
+
+# ASP.NET Core (jacaclub-backend)
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.pubxml
+*.pubxml.user
+*.nupkg
+[Dd]ebug/
+[Rr]elease/
+Publish/
+*.pdb
+*.dll.config
+*.exe.config
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sln
+*.sln.iml
+*.vsidx
+*.vstmp
+*.pidb
+*.userprefs
+
+# Logs e Temporários
+*.log
+*.tmp
+*.bak
+*.swp
+*.swn
+*.swo
+
+# Docker
+*.dockerignore
+Dockerfile.*
+*.tar.gz
+*.tar
+*.zip
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de Configuração
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
