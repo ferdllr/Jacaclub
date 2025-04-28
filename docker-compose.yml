@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: https://github.com/ferdllr/Jacaclub.git#main
+      dockerfile: jacaclub-backend/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - MongoDbSettings__ConnectionString=mongodb://mongodb:27017
+      - MongoDbSettings__DatabaseName=JacaClubDb
+      - MongoDbSettings__UsersCollectionName=Users
+    depends_on:
+      - mongodb
+    networks:
+      - jacaclub-network
+
+  frontend:
+    build:
+      context: https://github.com/ferdllr/Jacaclub.git#main
+      dockerfile: jacaclub-frontend/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:5000
+    depends_on:
+      - backend
+    networks:
+      - jacaclub-network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - jacaclub-network
+
+volumes:
+  mongodb-data:
+
+networks:
+  jacaclub-network:
+    driver: bridge

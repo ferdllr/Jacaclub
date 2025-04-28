@@ -1,0 +1,33 @@
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ASP.NET / .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VSCode
+.vscode/
+Jacaclub.sln
+# Others
+*.log
+*.DS_Store
+Thumbs.db
+
+# MongoDB (caso você tenha algum dump ou data export local)
+dump/
+*.mongodb
