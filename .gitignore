@@ -1,0 +1,21 @@
+# NODE
+node_modules/
+.next/
+*.log
+
+# ENV
+.env*
+
+#VSCODE
+.vscode/
+
+# DOTNET
+x64/
+x86/
+ARM*/
+bld/
+[Ll]og/
+*.tlog
+
+
+
