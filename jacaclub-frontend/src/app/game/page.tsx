@@ -33,7 +33,24 @@ export default function Home() {
       );
       console.log('PlayerMoved received:', data);
     });
-
+    connect.on('PlayerSentMessage', (data: { connectionId: string; message: string }) => {
+    setPlayers(prevPlayers =>
+        prevPlayers.map(player =>
+        player.connectionId === data.connectionId
+            ? { ...player, message: data.message }
+            : player
+        )
+    );
+    setTimeout(() => {
+        setPlayers(prevPlayers =>
+        prevPlayers.map(player =>
+            player.connectionId === data.connectionId
+            ? { ...player, message: undefined }
+            : player
+        )
+        );
+    }, 5000);
+    });
     connect.start()
       .then(() => {
         console.log('Conectado ao GameHub');
@@ -51,10 +68,26 @@ export default function Home() {
 
   return (
     <div className="main-div">
-      <div className="div-footer">
+        <div className="div-footer">
         <h1 className="text-xl font-bold mb-2">jogo</h1>
-      </div>
-      <GameScreen players={players} connection={connection} />
+        </div>
+        <GameScreen players={players} connection={connection} />
+        <div className="chat-input-wrapper">
+            <input
+            type="text"
+            className="chat-input"
+            placeholder="escreve ai"
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' && connection) {
+                const message = e.currentTarget.value.trim();
+                if (message.length > 0) {
+                    connection.invoke('SendMessage', message);
+                    e.currentTarget.value = '';
+                }
+                }
+            }}
+            />
+        </div>
     </div>
   );
 }

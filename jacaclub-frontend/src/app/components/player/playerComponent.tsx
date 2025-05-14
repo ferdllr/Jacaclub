@@ -23,6 +23,11 @@ const PlayerCard: React.FC<PlayerProps> = ({ player, avatarUrl }) => {
       }}
     >
       <div className="player-info">
+        {player.message && (
+          <div className="player-message">
+            <p>{player.message}</p>
+          </div>
+        )}
         <p className="player-name">{player.name}</p>
       </div>
       {avatarUrl && (

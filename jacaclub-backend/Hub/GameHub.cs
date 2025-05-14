@@ -64,4 +64,16 @@ public class GameHub : Microsoft.AspNetCore.SignalR.Hub
             throw;
         }
     }
+    public async Task SendMessage(string message)
+    {
+        if (ConnectedPlayers.TryGetValue(Context.ConnectionId, out var player))
+        {
+            await Clients.All.SendAsync("PlayerSentMessage", new
+            {
+                player.ConnectionId,
+                Message = message
+            });
+            Console.WriteLine($"Mensagem de {player.ConnectionId}: {message}");
+        }
+    }
 }
