@@ -1,0 +1,22 @@
+.game-screen {
+  width: 800px;
+  height: 600px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  background-color: #9bef79;
+  opacity: 0.8;
+  background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #b4ff72 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0,10px 10px;
+}
+.player-list {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+}

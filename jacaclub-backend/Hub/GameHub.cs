@@ -35,4 +35,33 @@ public class GameHub : Microsoft.AspNetCore.SignalR.Hub
     {
         await Clients.Caller.SendAsync("ReceiveConnectedPlayers", ConnectedPlayers.Values.ToList());
     }
+
+    public async Task MovePlayer(int x, int y)
+    {
+        try
+        {
+            if (ConnectedPlayers.TryGetValue(Context.ConnectionId, out var player))
+            {
+                player.X = Math.Max(0, Math.Min(x, 800));
+                player.Y = Math.Max(0, Math.Min(y, 600));
+                await Clients.All.SendAsync("PlayerMoved", new
+                {
+                    player.ConnectionId,
+                    player.Name,
+                    X = player.X,
+                    Y = player.Y
+                });
+                Console.WriteLine($"Player {player.ConnectionId} moved to x: {player.X}, y: {player.Y}");
+            }
+            else
+            {
+                Console.WriteLine($"Player with ConnectionId {Context.ConnectionId} not found");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in MovePlayer: {ex.Message}");
+            throw;
+        }
+    }
 }

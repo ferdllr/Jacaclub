@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("jacaclub-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d033e0ac18aa224eb220bba853f91cd945b82f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df9202fae239ebe16b2ac40aca6a31f43b884ef9")]
 [assembly: System.Reflection.AssemblyProductAttribute("jacaclub-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("jacaclub-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

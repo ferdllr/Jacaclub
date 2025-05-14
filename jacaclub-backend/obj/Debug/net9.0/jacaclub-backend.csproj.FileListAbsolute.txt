@@ -36,3 +36,4 @@
 /home/jorneyu/Documentos/Jacaclub/jacaclub-backend/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/jorneyu/Documentos/Jacaclub/jacaclub-backend/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /home/jorneyu/Documentos/Jacaclub/jacaclub-backend/bin/Debug/net9.0/System.Net.WebSockets.WebSocketProtocol.dll
+/home/jorneyu/Documentos/Jacaclub/jacaclub-backend/obj/Debug/net9.0/jacaclub-backend.sourcelink.json

@@ -2,11 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { HubConnection, HubConnectionBuilder, LogLevel } from "@microsoft/signalr";
-
-interface Player {
-  connectionId: string;
-  name: string;
-}
+import { Player } from "./interfaces/player";
 
 export default function Home() {
   const [connection, setConnection] = useState<HubConnection | null>(null);
